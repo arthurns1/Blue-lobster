@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Funcional</title>
+    <style>
+      img {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Calculadora Funcional</h1>
+      <p>
+        <label for="ival1">Primeiro Valor: </label> <br />
+        <input type="text" name="val1" id="ival1" />
+      </p>
+      <p>
+        <label for="ival1">Segundo Valor: </label> <br />
+        <input type="text" name="val2" id="ival2" />
+      </p>
+      <p>
+        <input type="button" value="Calcular!" id="calcular" />
+      </p>
+
+      <audio id="theme">
+        <source src="./sounds/videoplayback.m4a" type="" />
+      </audio>
+      <span id="blue-lobster"> </span>
+    </main>
+
+    <script>
+      const CALCULAR = document.querySelector("#calcular");
+      const LOBSTER = document.querySelector("#blue-lobster");
+
+      CALCULAR.addEventListener("click", () => {
+        const image = document.createElement("img");
+        image.src = "./img/lobster.jpeg";
+        const THEME = document.createElement("audio");
+        const SOURCE = document.createElement("source");
+
+        SOURCE.src = "./sounds/videoplayback.m4a";
+        THEME.autoplay = "autoplay";
+        THEME.appendChild(SOURCE);
+
+        LOBSTER.appendChild(image);
+        LOBSTER.appendChild(THEME);
+      });
+    </script>
+  </body>
+</html>
